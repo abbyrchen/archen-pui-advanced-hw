@@ -1,15 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <title>Page Title</title>
-  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Abby Chen">
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <title>Bun Bun bake shop</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+
   <body>
+    <!-- navbar -->
+    <nav>
+      <div class="site-logo">
+        <img src="../assets/logo/logo-01.svg" alt="Bun Bake Shop Logo">
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item active"><a href=#products>PRODUCTS</a></li>
+        <li class="nav-item"><a href=#cart>CART</a></li>
+      </ul>
+    </nav>
+    
+    <header>
+      <h1>Our hand-made cinnamon rolls</h1>
+    </header>
 
-    <h1>I am the solution to HW1!</h1>
+    <!-- products and order capabilities -->
+    <main>
+      <section id="products">
+        <div class="product-item">
+          <!-- product image -->
+          <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll">
+          
+          <!-- product title -->
+          <h3>Original cinnamon roll</h3>
+          
+          <div class="adjustments">
+            <!-- glazing options -->
+            <label for="glazing">Glazing:</label>
+            <select name="glazing">
+              <option value="original">Keep original</option>
+              <option value="sugar">Sugar Milk</option>
+              <option value="cream">Cream Cheese Frosting</option>
+            </select>
+            <!-- quantity options -->
+            <p>Pack size:</p>
+            <input type="radio" value="1">
+            <label for="size1">1</label><br>
+            <input type="radio" value="3">
+            <label for="size3">3</label><br>
+            <input type="radio" value="6">
+            <label for="size6">6</label><br>
+            <input type="radio" value="12">
+            <label for="size12">12</label><br>
+          </div>
 
-    <p>
-        And I can link to <a href="./otherpage.html">other pages.</a>
-    </p>
+          <div class="price-cart">
+            <p>$2.49</p>
+            <button type="button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-item">
+          <!-- product image -->
+          <img src="../assets/products/apple-cinnamon-roll.jpg" alt="Apple Cinnamon Roll">
+          
+          <!-- product title -->
+          <h3>Apple cinnamon roll</h3>
+          
+          <div class="adjustments">
+            <!-- glazing options -->
+            <label for="glazing">Glazing:</label>
+            <select name="glazing">
+              <option value="original">Keep original</option>
+              <option value="sugar">Sugar Milk</option>
+              <option value="cream">Cream Cheese Frosting</option>
+            </select>
+            <!-- quantity options -->
+            <p>Pack size:</p>
+            <input type="radio" value="1">
+            <label for="size1">1</label><br>
+            <input type="radio" value="3">
+            <label for="size3">3</label><br>
+            <input type="radio" value="6">
+            <label for="size6">6</label><br>
+            <input type="radio" value="12">
+            <label for="size12">12</label><br>
+          </div>
 
+          <div class="price-cart">
+            <p>$3.49</p>
+            <button type="button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-item">
+          <!-- product image -->
+          <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="Raisin Cinnamon Roll">
+
+          <!-- product title -->
+          <h3>Raisin cinnamon roll</h3>
+          
+          <div class="adjustments">
+            <!-- glazing options -->
+            <label for="glazing">Glazing:</label>
+            <select name="glazing">
+              <option value="original">Keep original</option>
+              <option value="sugar">Sugar Milk</option>
+              <option value="cream">Cream Cheese Frosting</option>
+            </select>
+
+            <!-- quantity options -->
+            <p>Pack size:</p>
+            <input type="radio" value="1">
+            <label for="size1">1</label><br>
+            <input type="radio" value="3">
+            <label for="size3">3</label><br>
+            <input type="radio" value="6">
+            <label for="size6">6</label><br>
+            <input type="radio" value="12">
+            <label for="size12">12</label><br>
+          </div>
+
+          <div class="price-cart">
+            <p>$2.99</p>
+            <button type="button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-item">
+          <!-- product image -->
+          <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="Walnut Cinnamon Roll">
+
+          <!-- product title -->
+          <h3>Walnut cinnamon roll</h3>
+          
+          <div class="adjustments">
+            <!-- glazing options -->
+            <label for="glazing">Glazing:</label>
+            <select name="glazing">
+              <option value="original">Keep original</option>
+              <option value="sugar">Sugar Milk</option>
+              <option value="cream">Cream Cheese Frosting</option>
+            </select>
+            <!-- quantity options -->
+            <p>Pack size:</p>
+            <input type="radio" value="1">
+            <label for="size1">1</label><br>
+            <input type="radio" value="3">
+            <label for="size3">3</label><br>
+            <input type="radio" value="6">
+            <label for="size6">6</label><br>
+            <input type="radio" value="12">
+            <label for="size12">12</label><br>
+          </div>
+
+          <div class="price-cart">
+            <p>$3.49</p>
+            <button type="button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-item">
+          <!-- product image -->
+          <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Double Chocolate Cinnamon Roll">
+
+          <!-- product title -->
+          <h3>Double chocolate cinnamon roll</h3>
+          
+          <div class="adjustments">
+            <!-- glazing options -->
+            <label for="glazing">Glazing:</label>
+            <select name="glazing">
+              <option value="original">Keep original</option>
+              <option value="sugar">Sugar Milk</option>
+              <option value="cream">Cream Cheese Frosting</option>
+            </select>
+            <!-- quantity options -->
+            <p>Pack size:</p>
+            <input type="radio" value="1">
+            <label for="size1">1</label><br>
+            <input type="radio" value="3">
+            <label for="size3">3</label><br>
+            <input type="radio" value="6">
+            <label for="size6">6</label><br>
+            <input type="radio" value="12">
+            <label for="size12">12</label><br>
+          </div>
+
+          <div class="price-cart">
+            <p>$3.99</p>
+            <button type="button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-item">
+          <!-- product image -->
+          <img src="../assets/products/strawberry-cinnamon-roll.jpg" alt="Strawberry Cinnamon Roll">
+
+          <!-- product title -->
+          <h3>Strawberry cinnamon roll</h3>
+          
+          <div class="adjustments">
+            <!-- glazing options -->
+            <label for="glazing">Glazing:</label>
+            <select name="glazing">
+              <option value="original">Keep original</option>
+              <option value="sugar">Sugar Milk</option>
+              <option value="cream">Cream Cheese Frosting</option>
+            </select>
+            <!-- quantity options -->
+            <p>Pack size:</p>
+            <input type="radio" value="1">
+            <label for="size1">1</label><br>
+            <input type="radio" value="3">
+            <label for="size3">3</label><br>
+            <input type="radio" value="6">
+            <label for="size6">6</label><br>
+            <input type="radio" value="12">
+            <label for="size12">12</label><br>
+          </div>
+
+          <div class="price-cart">
+            <p>$3.99</p>
+            <button type="button">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
+
