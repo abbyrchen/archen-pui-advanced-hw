@@ -1,0 +1,108 @@
+/* navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    padding-left: 550px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    padding-right: 70px;
+}
+
+.nav-links li {
+    list-style: none;
+    font-size: 18px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    padding: 20px;
+    padding-right: -50px;
+    display: block;
+}
+
+.nav-item {
+    text-decoration: none;
+}
+
+.nav-item.current a {
+    background-color: yellow;
+    font-weight: 750;
+}
+
+.nav-item:hover {
+    background-color: yellow;
+}
+
+.site-logo img{
+    width: 400px;
+}
+
+header h1 {
+    font-weight: 200;
+    font-size: 30px;
+    text-align: center;
+    padding-top: -100px;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Gill Sans', sans-serif;
+    max-width: 1200px;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-left: 100px;
+}
+
+.product-item {
+    text-align: left;
+    padding: 20px;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #000000;
+}
+
+.product-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+.size {
+    display: flex;
+}
+
+.price-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price-cart p {
+    font-size: 1.4em;
+}
+
+.price-cart button {
+    border: 3px solid #000000;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.price-cart button:hover {
+    background-color: yellow;
+}

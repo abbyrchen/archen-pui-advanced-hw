@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Abby Chen">
     <meta
       name="description"
       content="Web site created using create-react-app"
-    />
+    >
 
     <title>Bun Bun bake shop</title>
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
   <body>
@@ -21,7 +21,7 @@
         <img src="../assets/logo/logo-01.svg" alt="Bun Bake Shop Logo">
       </div>
       <ul class="nav-links">
-        <li class="nav-item active"><a href=#products>PRODUCTS</a></li>
+        <li class="nav-item current"><a href=index.html>PRODUCTS</a></li>
         <li class="nav-item"><a href=#cart>CART</a></li>
       </ul>
     </nav>
@@ -42,24 +42,28 @@
           
           <div class="adjustments">
             <!-- glazing options -->
-            <label for="glazing">Glazing:</label>
-            <select name="glazing">
+            <label for="original-glazing">Glazing:</label>
+            <select id="original-glazing" name="original-glazing">
               <option value="original">Keep original</option>
               <option value="sugar">Sugar Milk</option>
-              <option value="cream">Cream Cheese Frosting</option>
+              <option value="vanilla">Vanilla Milk</option>
+              <option value="chocolate">Double Chocolate</option>
             </select>
+          </div>
+          <div class="size">
             <!-- quantity options -->
             <p>Pack size:</p>
-            <input type="radio" value="1">
-            <label for="size1">1</label><br>
-            <input type="radio" value="3">
-            <label for="size3">3</label><br>
-            <input type="radio" value="6">
-            <label for="size6">6</label><br>
-            <input type="radio" value="12">
-            <label for="size12">12</label><br>
+            <input type="radio" id="original-size1" name="original-pack-size" value="1">
+            <label for="original-size1">1</label><br>
+            <input type="radio" id="original-size3" name="original-pack-size" value="3">
+            <label for="original-size3">3</label><br>
+            <input type="radio" id="original-size6" name="original-pack-size" value="6">
+            <label for="original-size6">6</label><br>
+            <input type="radio" id="original-size12" name="original-pack-size" value="12">
+            <label for="original-size12">12</label><br>
           </div>
 
+          <!-- price and add to cart -->
           <div class="price-cart">
             <p>$2.49</p>
             <button type="button">Add to Cart</button>
@@ -74,24 +78,28 @@
           
           <div class="adjustments">
             <!-- glazing options -->
-            <label for="glazing">Glazing:</label>
-            <select name="glazing">
+            <label for="apple-glazing">Glazing:</label>
+            <select id="apple-glazing" name="apple-glazing">
               <option value="original">Keep original</option>
               <option value="sugar">Sugar Milk</option>
-              <option value="cream">Cream Cheese Frosting</option>
+              <option value="vanilla">Vanilla Milk</option>
+              <option value="chocolate">Double Chocolate</option>
             </select>
+          </div>
             <!-- quantity options -->
+          <div class="size">
             <p>Pack size:</p>
-            <input type="radio" value="1">
-            <label for="size1">1</label><br>
-            <input type="radio" value="3">
-            <label for="size3">3</label><br>
-            <input type="radio" value="6">
-            <label for="size6">6</label><br>
-            <input type="radio" value="12">
-            <label for="size12">12</label><br>
+            <input type="radio" id="apple-size1" name="apple-pack-size" value="1">
+            <label for="apple-size1">1</label><br>
+            <input type="radio" id="apple-size3" name="apple-pack-size" value="3">
+            <label for="apple-size3">3</label><br>
+            <input type="radio" id="apple-size6" name="apple-pack-size" value="6">
+            <label for="apple-size6">6</label><br>
+            <input type="radio" id="apple-size12" name="apple-pack-size" value="12">
+            <label for="apple-size12">12</label><br>
           </div>
 
+          <!-- price and add to cart -->
           <div class="price-cart">
             <p>$3.49</p>
             <button type="button">Add to Cart</button>
@@ -106,25 +114,28 @@
           
           <div class="adjustments">
             <!-- glazing options -->
-            <label for="glazing">Glazing:</label>
-            <select name="glazing">
+            <label for="raisin-glazing">Glazing:</label>
+            <select id="raisin-glazing" name="raisin-glazing">
               <option value="original">Keep original</option>
               <option value="sugar">Sugar Milk</option>
-              <option value="cream">Cream Cheese Frosting</option>
+              <option value="vanilla">Vanilla Milk</option>
+              <option value="chocolate">Double Chocolate</option>
             </select>
-
+          </div>
+          <div class="size">
             <!-- quantity options -->
             <p>Pack size:</p>
-            <input type="radio" value="1">
-            <label for="size1">1</label><br>
-            <input type="radio" value="3">
-            <label for="size3">3</label><br>
-            <input type="radio" value="6">
-            <label for="size6">6</label><br>
-            <input type="radio" value="12">
-            <label for="size12">12</label><br>
+            <input type="radio" id="raisin-size1" name="raisin-pack-size" value="1">
+            <label for="raisin-size1">1</label><br>
+            <input type="radio" id="raisin-size3" name="raisin-pack-size"value="3">
+            <label for="raisin-size3">3</label><br>
+            <input type="radio" id="raisin-size6" name="raisin-pack-size"value="6">
+            <label for="raisin-size6">6</label><br>
+            <input type="radio" id="raisin-size12" name="raisin-pack-size"value="12">
+            <label for="raisin-size12">12</label><br>
           </div>
 
+          <!-- price and add to cart -->
           <div class="price-cart">
             <p>$2.99</p>
             <button type="button">Add to Cart</button>
@@ -139,24 +150,28 @@
           
           <div class="adjustments">
             <!-- glazing options -->
-            <label for="glazing">Glazing:</label>
-            <select name="glazing">
+            <label for="walnut-glazing">Glazing:</label>
+            <select id="walnut-glazing" name="walnut-glazing">
               <option value="original">Keep original</option>
               <option value="sugar">Sugar Milk</option>
-              <option value="cream">Cream Cheese Frosting</option>
+              <option value="vanilla">Vanilla Milk</option>
+              <option value="chocolate">Double Chocolate</option>
             </select>
+          </div>
+          <div class="size">
             <!-- quantity options -->
             <p>Pack size:</p>
-            <input type="radio" value="1">
-            <label for="size1">1</label><br>
-            <input type="radio" value="3">
-            <label for="size3">3</label><br>
-            <input type="radio" value="6">
-            <label for="size6">6</label><br>
-            <input type="radio" value="12">
-            <label for="size12">12</label><br>
+            <input type="radio" id="walnut-size1" name="walnut-pack-size" value="1">
+            <label for="walnut-size1">1</label><br>
+            <input type="radio" id="walnut-size3" name="walnut-pack-size" value="3">
+            <label for="walnut-size3">3</label><br>
+            <input type="radio" id="walnut-size6" name="walnut-pack-size" value="6">
+            <label for="walnut-size6">6</label><br>
+            <input type="radio" id="walnut-size12" name="walnut-pack-size" value="12">
+            <label for="walnut-size12">12</label><br>
           </div>
 
+          <!-- price and add to cart -->
           <div class="price-cart">
             <p>$3.49</p>
             <button type="button">Add to Cart</button>
@@ -171,24 +186,28 @@
           
           <div class="adjustments">
             <!-- glazing options -->
-            <label for="glazing">Glazing:</label>
-            <select name="glazing">
+            <label for="choco-glazing">Glazing:</label>
+            <select id="choco-glazing" name="choco-glazing">
               <option value="original">Keep original</option>
               <option value="sugar">Sugar Milk</option>
-              <option value="cream">Cream Cheese Frosting</option>
+              <option value="vanilla">Vanilla Milk</option>
+              <option value="chocolate">Double Chocolate</option>
             </select>
+          </div>
+          <div class="size">
             <!-- quantity options -->
             <p>Pack size:</p>
-            <input type="radio" value="1">
-            <label for="size1">1</label><br>
-            <input type="radio" value="3">
-            <label for="size3">3</label><br>
-            <input type="radio" value="6">
-            <label for="size6">6</label><br>
-            <input type="radio" value="12">
-            <label for="size12">12</label><br>
+            <input type="radio" id="choco-size1" name="choco-pack-size" value="1">
+            <label for="choco-size1">1</label><br>
+            <input type="radio" id="choco-size3" name="choco-pack-size" value="3">
+            <label for="choco-size3">3</label><br>
+            <input type="radio" id="choco-size6" name="choco-pack-size" value="6">
+            <label for="choco-size6">6</label><br>
+            <input type="radio" id="choco-size12" name="choco-pack-size" value="12">
+            <label for="choco-size12">12</label><br>
           </div>
 
+          <!-- price and add to cart -->
           <div class="price-cart">
             <p>$3.99</p>
             <button type="button">Add to Cart</button>
@@ -203,24 +222,28 @@
           
           <div class="adjustments">
             <!-- glazing options -->
-            <label for="glazing">Glazing:</label>
-            <select name="glazing">
+            <label for="strawb-glazing">Glazing:</label>
+            <select id="strawb-glazing" name="strawb-glazing">
               <option value="original">Keep original</option>
               <option value="sugar">Sugar Milk</option>
-              <option value="cream">Cream Cheese Frosting</option>
+              <option value="vanilla">Vanilla Milk</option>
+              <option value="chocolate">Double Chocolate</option>
             </select>
+          </div>
+          <div class="size">
             <!-- quantity options -->
             <p>Pack size:</p>
-            <input type="radio" value="1">
-            <label for="size1">1</label><br>
-            <input type="radio" value="3">
-            <label for="size3">3</label><br>
-            <input type="radio" value="6">
-            <label for="size6">6</label><br>
-            <input type="radio" value="12">
-            <label for="size12">12</label><br>
+            <input type="radio" id="strawb-size1" name="strawb-pack-size" value="1">
+            <label for="strawb-size1">1</label><br>
+            <input type="radio" id="strawb-size3" name="strawb-pack-size" value="3">
+            <label for="strawb-size3">3</label><br>
+            <input type="radio" id="strawb-size6" name="strawb-pack-size" value="6">
+            <label for="strawb-size6">6</label><br>
+            <input type="radio" id="strawb-size12" name="strawb-pack-size" value="12">
+            <label for="strawb-size12">12</label><br>
           </div>
 
+          <!-- price and add to cart -->
           <div class="price-cart">
             <p>$3.99</p>
             <button type="button">Add to Cart</button>
@@ -230,4 +253,3 @@
     </main>
   </body>
 </html>
-
