@@ -1,3 +1,7 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 /* navbar styling */
 nav {
     display: flex;
@@ -23,7 +27,6 @@ nav {
     color: #333;
     font-weight: 400;
     padding: 20px;
-    padding-right: -50px;
     display: block;
 }
 
@@ -48,12 +51,10 @@ header h1 {
     font-weight: 200;
     font-size: 30px;
     text-align: center;
-    padding-top: -100px;
 }
 
 body {
     overflow-x: hidden;
-    font-family: 'Gill Sans', sans-serif;
     max-width: 1200px;
 }
 
@@ -66,8 +67,12 @@ body {
 }
 
 .product-item {
-    text-align: left;
+    text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .product-item img {
@@ -81,28 +86,94 @@ body {
     margin-bottom: 30px;
 }
 
-.size {
+.product-content {
     display: flex;
+    justify-content: space-between;
+    margin: 5px;
 }
 
-.price-cart {
+.left-column {
+    flex: 1; 
+    padding: 10px;
+}
+
+.left-column p {
+    text-align: left;
+    font-size: 0.9em;
+    padding: 8px;
+}
+
+.price p {
+    font-size: 1.3em;
+}
+
+.right-column {
+    text-align: right;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    padding: 8px;
+}
+
+.glazing-dropdown select {
+    font-size: 1.2em;
+}
+
+.pack-size {
+    display: flex;
+    gap: 5px;
+}
+
+.pack-size p {
+    font-size: 0.8em;
+}
+
+.pack-size input {
+    display: none;
+}
+
+.pack-size label {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pack-size label:hover {
+    background-color: #c5c5c5;
+}
+
+.pack-size input:checked + label {
+    background-color: #c5c5c5;
+}
+
+.left-column {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.cart-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-.price-cart p {
-    font-size: 1.4em;
-}
-
-.price-cart button {
+.cart-button button {
     border: 3px solid #000000;
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-size: 1.3em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
 }
 
-.price-cart button:hover {
+.cart-button button:hover {
     background-color: yellow;
 }
+
