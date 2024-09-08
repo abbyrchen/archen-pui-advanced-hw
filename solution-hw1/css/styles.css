@@ -47,6 +47,7 @@ nav {
     width: 400px;
 }
 
+/* header styling */
 header h1 {
     font-weight: 200;
     font-size: 30px;
@@ -58,6 +59,7 @@ body {
     max-width: 1200px;
 }
 
+/* main products section */
 #products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -92,6 +94,7 @@ body {
     margin: 5px;
 }
 
+/* left column product content styling */
 .left-column {
     flex: 1; 
     padding: 10px;
@@ -99,14 +102,15 @@ body {
 
 .left-column p {
     text-align: left;
-    font-size: 0.9em;
-    padding: 8px;
+    font-size: 1em;
+    padding: 10px;
 }
 
 .price p {
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
+/* right column product styling */
 .right-column {
     text-align: right;
     flex: 1;
@@ -152,11 +156,6 @@ body {
 
 .pack-size input:checked + label {
     background-color: #c5c5c5;
-}
-
-.left-column {
-    font-size: 1.2em;
-    text-align: left;
 }
 
 .cart-button {
