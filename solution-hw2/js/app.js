@@ -72,12 +72,13 @@ function glazingChange(element) {
 
     // get packsize choice
     const sizeChoice = parseInt(item.querySelector('.pack-size input[type="radio"]:checked').value);
-    console.log(sizeChoice);
+    console.log('Size Choice: ', sizeChoice);
 
     // get glazing price
     const glazingChoice = item.querySelector('select').value;
     const glazingOption = glazingOptions.find(option => option.glazing === glazingChoice);
     const glazingPrice = glazingOption.priceAdaptation;
+    console.log('Selected Glazing:', glazingChoice);
     
     const roll = new Roll(name, basePrice, glazingPrice, sizeChoice);
     const totalPrice = roll.calculatePrice();
