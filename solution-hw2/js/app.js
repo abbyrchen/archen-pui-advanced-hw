@@ -8,7 +8,7 @@ function Roll(type, basePrice, glazing, packSize) {
     this.calculatePrice = () => {
         const glazingPrice = parseFloat(this.glazing);
         return (this.basePrice + glazingPrice) * this.packSize;
-    }
+    };
 }
 
 const glazingOptions = [
@@ -16,14 +16,21 @@ const glazingOptions = [
     { glazing: 'sugar', priceAdaptation: 0.00 },
     { glazing: 'vanilla', priceAdaptation: 0.50 },
     { glazing: 'chocolate', priceAdaptation: 1.50 }
-]
+];
+
+const glazingNames = {
+    'original': 'Original',
+    'sugar': 'Sugar Milk',
+    'vanilla': 'Vanilla Milk',
+    'chocolate': 'Double Chocolate'
+};
 
 const packSizeOptions = [
     { packSize: 1, priceAdaptation: 1 },
     { packSize: 3, priceAdaptation: 3 },
     { packSize: 6, priceAdaptation: 5 },
     { packSize: 12, priceAdaptation: 10 }
-]
+];
 
 const basePrices = {
     'Original cinnamon roll': 2.49,
@@ -32,7 +39,7 @@ const basePrices = {
     'Walnut cinnamon roll': 3.49,
     'Double chocolate cinnamon roll': 3.99,
     'Strawberry cinnamon roll': 3.99
-}
+};
 
 const populateDropdown = () => {
     const glazingDropdown = document.querySelectorAll('.glazing-dropdown select');
@@ -50,7 +57,7 @@ const populateDropdown = () => {
             dropdown.appendChild(glazingOption);
         }); 
     });
-}
+};
 
 // add to cart functionality
 let cartCount = 0;
@@ -61,7 +68,7 @@ let cartItems = [];
 const updateCart = () => {
     document.getElementById('cart-count').textContent = cartCount;
     document.getElementById('cart-total').textContent = cartTotal.toFixed(2);
-}
+};
 
 // calculate price with glazing choice
 function glazingChange(element) {
@@ -92,13 +99,13 @@ const cartPopup = (name, glazing, packSize, price) => {
     const popupMsg = document.getElementById('cart-popup-msg');
 
     // update pop up message
-    popupMsg.innerHTML = 'Added to cart: <br> ${itemName} <br> ${glazing} glazing <br> Pack of ${packSize} <br> Price: $${price}';
+    popupMsg.innerHTML = `Added to cart: <br><br> ${name} <br> ${glazing} glazing <br> Pack of ${packSize} <br> Price: $${price.toFixed(2)}`;
 
     popup.style.display = 'block';
     setTimeout(() => {
         popup.style.display = 'none';
     }, 3000);
-}
+};
 
 // add items to cart
 const addToCart = (element) => {
@@ -130,7 +137,10 @@ const addToCart = (element) => {
     cartTotal += totalPrice;
 
     updateCart();
-}
+
+    glazingName = glazingNames[glazingChoice];
+    cartPopup(name, glazingName, sizeChoice, totalPrice);
+};
 
 document.querySelectorAll('.cart-button button').forEach(button => {
     button.addEventListener('click', () => addToCart(button));

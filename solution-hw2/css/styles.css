@@ -9,6 +9,10 @@ nav {
     align-items: center;
 }
 
+.nav-item {
+    position: relative;
+}
+
 .nav-links {
     display: flex;
     padding-left: 550px;
@@ -42,6 +46,7 @@ a.link:hover {
     font-weight: 300;
     font-size: 0.8em;
     text-align: right;
+    z-index: 0;
 }
 
 .site-logo img{
@@ -177,3 +182,20 @@ body {
     background-color: yellow;
 }
 
+#cart-popup {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    border: 1px solid rgb(153, 153, 153);
+    padding: 10px;
+    z-index: 1;
+    width: 180px;
+    display: none;
+}
+
+#cart-popup p {
+    font-weight: 300;
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
