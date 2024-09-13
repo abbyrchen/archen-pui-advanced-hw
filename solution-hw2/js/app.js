@@ -1,3 +1,4 @@
+// roll object
 function Roll(type, basePrice, glazing, packSize) {
     this.type = type;
     this.basePrice = basePrice;
@@ -11,6 +12,7 @@ function Roll(type, basePrice, glazing, packSize) {
     };
 }
 
+// list of objects for glazing options and price adaptations
 const glazingOptions = [
     { glazing: 'original', priceAdaptation: 0.00 }, 
     { glazing: 'sugar', priceAdaptation: 0.00 },
@@ -18,6 +20,7 @@ const glazingOptions = [
     { glazing: 'chocolate', priceAdaptation: 1.50 }
 ];
 
+// object for glazing value to formal name
 const glazingNames = {
     'original': 'Original',
     'sugar': 'Sugar Milk',
@@ -25,6 +28,7 @@ const glazingNames = {
     'chocolate': 'Double Chocolate'
 };
 
+// list of objects for pack size options and price adaptations
 const packSizeOptions = [
     { packSize: 1, priceAdaptation: 1 },
     { packSize: 3, priceAdaptation: 3 },
@@ -32,6 +36,7 @@ const packSizeOptions = [
     { packSize: 12, priceAdaptation: 10 }
 ];
 
+// roll base prices
 const basePrices = {
     'Original cinnamon roll': 2.49,
     'Apple cinnamon roll': 3.49,
@@ -41,6 +46,7 @@ const basePrices = {
     'Strawberry cinnamon roll': 3.99
 };
 
+// populates options of dropdown fields with objects
 const populateDropdown = () => {
     const glazingDropdown = document.querySelectorAll('.glazing-dropdown select');
     
@@ -79,13 +85,11 @@ function glazingChange(element) {
 
     // get packsize choice
     const sizeChoice = parseInt(item.querySelector('.pack-size input[type="radio"]:checked').value);
-    console.log('Size Choice: ', sizeChoice);
 
     // get glazing price
     const glazingChoice = item.querySelector('select').value;
     const glazingOption = glazingOptions.find(option => option.glazing === glazingChoice);
     const glazingPrice = glazingOption.priceAdaptation;
-    console.log('Selected Glazing:', glazingChoice);
     
     const roll = new Roll(name, basePrice, glazingPrice, sizeChoice);
     const totalPrice = roll.calculatePrice();
@@ -101,6 +105,7 @@ const cartPopup = (name, glazing, packSize, price) => {
     // update pop up message
     popupMsg.innerHTML = `Added to cart: <br><br> ${name} <br> ${glazing} glazing <br> Pack of ${packSize} <br> Price: $${price.toFixed(2)}`;
 
+    // display block for 3 seconds
     popup.style.display = 'block';
     setTimeout(() => {
         popup.style.display = 'none';
@@ -109,39 +114,31 @@ const cartPopup = (name, glazing, packSize, price) => {
 
 // add items to cart
 const addToCart = (element) => {
-    // find relevant product
+    // find relevant product and price
     const item = element.closest('.product-item');
-    console.log('Product Item:', item);
-
     const name = item.querySelector('h3').textContent.trim();
-    console.log('Product Name:', name);
-
     const basePrice = basePrices[name];
-    console.log('Base Price:', basePrice);
 
+    // find size and glazing choice
     const sizeChoice = parseInt(item.querySelector('.pack-size input[type="radio"]:checked').value);
-    console.log('Selected Pack Size:', sizeChoice);
-
     const glazingChoice = item.querySelector('select').value;
     const glazingOption = glazingOptions.find(option => option.glazing === glazingChoice);
     const glazingPrice = glazingOption.priceAdaptation;
-    console.log('Selected Glazing:', glazingChoice);
-    console.log('Glazing Price:', glazingPrice);
 
     const roll = new Roll(name, basePrice, glazingPrice, sizeChoice);
     const totalPrice = roll.calculatePrice();
-    console.log('Total Price for the Roll:', totalPrice);
 
     // update cart and total
     cartCount += sizeChoice;
     cartTotal += totalPrice;
-
     updateCart();
 
+    // call cart popup message
     glazingName = glazingNames[glazingChoice];
     cartPopup(name, glazingName, sizeChoice, totalPrice);
 };
 
+// triggers events after clicking add to cart
 document.querySelectorAll('.cart-button button').forEach(button => {
     button.addEventListener('click', () => addToCart(button));
 })

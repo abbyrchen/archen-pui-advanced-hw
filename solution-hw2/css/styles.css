@@ -182,6 +182,7 @@ body {
     background-color: yellow;
 }
 
+/* cart popup message styling */
 #cart-popup {
     position: absolute;
     top: 35px;
