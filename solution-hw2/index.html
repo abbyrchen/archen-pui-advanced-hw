@@ -18,7 +18,7 @@
       </div>
       <ul class="nav-links">
         <li class="nav-item current"><a href=index.html>PRODUCTS</a></li>
-        <li class="nav-item"><a href=#cart>CART</a></li>
+        <li class="nav-item"><a href=#cart>CART (<span id="cart-count">0</span> item(s)) Total: $<span id="cart-total">0.00</span></a></li>
       </ul>
     </nav>
     
@@ -54,7 +54,7 @@
             <div class="right-column">
               <div class="glazing-dropdown">
                 <label for="original-glazing"></label>
-                <select id="original-glazing" name="original-glazing">
+                <select id="original-glazing" name="original-glazing" onchange="glazingChange(this)">
                   <option value="original">Keep original</option>
                   <option value="sugar">Sugar Milk</option>
                   <option value="vanilla">Vanilla Milk</option>
@@ -105,7 +105,7 @@
             <div class="right-column">
               <div class="glazing-dropdown">
                 <label for="apple-glazing"></label>
-                <select id="apple-glazing" name="apple-glazing">
+                <select id="apple-glazing" name="apple-glazing" onchange="glazingChange(this)">
                   <option value="original">Keep original</option>
                   <option value="sugar">Sugar Milk</option>
                   <option value="vanilla">Vanilla Milk</option>
@@ -156,7 +156,7 @@
             <div class="right-column">
               <div class="glazing-dropdown">
                 <label for="raisin-glazing"></label>
-                <select id="raisin-glazing" name="raisin-glazing">
+                <select id="raisin-glazing" name="raisin-glazing" onchange="glazingChange(this)">
                   <option value="original">Keep original</option>
                   <option value="sugar">Sugar Milk</option>
                   <option value="vanilla">Vanilla Milk</option>
@@ -207,7 +207,7 @@
             <div class="right-column">
               <div class="glazing-dropdown">
                 <label for="walnut-glazing"></label>
-                <select id="walnut-glazing" name="walnut-glazing">
+                <select id="walnut-glazing" name="walnut-glazing" onchange="glazingChange(this)">
                   <option value="original">Keep original</option>
                   <option value="sugar">Sugar Milk</option>
                   <option value="vanilla">Vanilla Milk</option>
@@ -259,7 +259,7 @@
             <div class="right-column">
               <div class="glazing-dropdown">
                 <label for="choco-glazing"></label>
-                <select id="choco-glazing" name="choco-glazing">
+                <select id="choco-glazing" name="choco-glazing" onchange="glazingChange(this)">
                   <option value="original">Keep original</option>
                   <option value="sugar">Sugar Milk</option>
                   <option value="vanilla">Vanilla Milk</option>
@@ -310,7 +310,7 @@
             <div class="right-column">
               <div class="glazing-dropdown">
                 <label for="strawb-glazing"></label>
-                <select id="strawb-glazing" name="strawb-glazing">
+                <select id="strawb-glazing" name="strawb-glazing" onchange="glazingChange(this)">
                   <option value="original">Keep original</option>
                   <option value="sugar">Sugar Milk</option>
                   <option value="vanilla">Vanilla Milk</option>

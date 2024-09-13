@@ -43,6 +43,10 @@ nav {
     background-color: yellow;
 }
 
+#cart-count, #cart-total {
+    font-size: 0.7em;
+}
+
 .site-logo img{
     width: 400px;
 }
