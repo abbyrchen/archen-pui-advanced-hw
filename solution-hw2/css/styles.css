@@ -34,7 +34,7 @@ a.link {
 
 a.link.current {
     background-color: yellow;
-    font-weight: 600;
+    font-weight: 650;
 }
 
 a.link:hover {
@@ -47,6 +47,7 @@ a.link:hover {
     font-size: 0.8em;
     text-align: right;
     z-index: 0;
+    line-height: 1.4em;
 }
 
 .site-logo img{
@@ -133,6 +134,7 @@ body {
 
 .glazing-dropdown select {
     font-size: 1.2em;
+    border: 2px solid black;
 }
 
 .pack-size {
