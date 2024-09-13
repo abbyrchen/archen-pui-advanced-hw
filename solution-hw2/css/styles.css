@@ -13,38 +13,35 @@ nav {
     display: flex;
     padding-left: 550px;
     border-bottom: 2px solid #000000;
-    padding-bottom: 10px;
-    padding-right: 70px;
 }
 
 .nav-links li {
     list-style: none;
-    font-size: 18px;
 }
 
-.nav-links li a {
+a.link {
     text-decoration: none;
     color: #333;
     font-weight: 400;
-    padding: 20px;
-    display: block;
+    font-size: 1.2em;
+    padding: 10px;
+    padding-left: 20px;
 }
 
-.nav-item {
-    text-decoration: none;
-}
-
-.nav-item.current a {
+a.link.current {
     background-color: yellow;
-    font-weight: 750;
+    font-weight: 600;
 }
 
-.nav-item:hover {
+a.link:hover {
     background-color: yellow;
 }
 
-#cart-count, #cart-total {
-    font-size: 0.7em;
+.cart-info {
+    padding: 15px;
+    font-weight: 300;
+    font-size: 0.8em;
+    text-align: right;
 }
 
 .site-logo img{

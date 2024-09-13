@@ -3,7 +3,7 @@ function Roll(type, basePrice, glazing, packSize) {
     this.basePrice = basePrice;
     this.glazing = glazing;
     this.packSize = packSize;
-    
+
     // calculate total price
     this.calculatePrice = () => {
         const glazingPrice = parseFloat(this.glazing);
@@ -27,7 +27,7 @@ const packSizeOptions = [
 
 const basePrices = {
     'Original cinnamon roll': 2.49,
-    'Apple cinammon roll': 3.49,
+    'Apple cinnamon roll': 3.49,
     'Raisin cinnamon roll': 2.99,
     'Walnut cinnamon roll': 3.49,
     'Double chocolate cinnamon roll': 3.99,
@@ -55,11 +55,12 @@ const populateDropdown = () => {
 // add to cart functionality
 let cartCount = 0;
 let cartTotal = 0.00;
+let cartItems = [];
 
 // update cart display
 const updateCart = () => {
     document.getElementById('cart-count').textContent = cartCount;
-    document.getElementById('cart-total').textContent = cartTotal;
+    document.getElementById('cart-total').textContent = cartTotal.toFixed(2);
 }
 
 // calculate price with glazing choice
@@ -71,9 +72,12 @@ function glazingChange(element) {
 
     // get packsize choice
     const sizeChoice = parseInt(item.querySelector('.pack-size input[type="radio"]:checked').value);
+    console.log(sizeChoice);
 
     // get glazing price
-    const glazingPrice = glazingOptions[item.querySelector('select').value];
+    const glazingChoice = item.querySelector('select').value;
+    const glazingOption = glazingOptions.find(option => option.glazing === glazingChoice);
+    const glazingPrice = glazingOption.priceAdaptation;
     
     const roll = new Roll(name, basePrice, glazingPrice, sizeChoice);
     const totalPrice = roll.calculatePrice();
@@ -81,17 +85,44 @@ function glazingChange(element) {
     return totalPrice;
 }
 
+// show cart popup
+const cartPopup = (name, glazing, packSize, price) => {
+    const popup = document.getElementById('cart-popup');
+    const popupMsg = document.getElementById('cart-popup-msg');
+
+    // update pop up message
+    popupMsg.innerHTML = 'Added to cart: <br> ${itemName} <br> ${glazing} glazing <br> Pack of ${packSize} <br> Price: $${price}';
+
+    popup.style.display = 'block';
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 3000);
+}
+
 // add items to cart
 const addToCart = (element) => {
     // find relevant product
     const item = element.closest('.product-item');
+    console.log('Product Item:', item);
+
     const name = item.querySelector('h3').textContent.trim();
+    console.log('Product Name:', name);
+
     const basePrice = basePrices[name];
+    console.log('Base Price:', basePrice);
+
     const sizeChoice = parseInt(item.querySelector('.pack-size input[type="radio"]:checked').value);
-    const glazingPrice = glazingOptions[item.querySelector('select').value];
+    console.log('Selected Pack Size:', sizeChoice);
+
+    const glazingChoice = item.querySelector('select').value;
+    const glazingOption = glazingOptions.find(option => option.glazing === glazingChoice);
+    const glazingPrice = glazingOption.priceAdaptation;
+    console.log('Selected Glazing:', glazingChoice);
+    console.log('Glazing Price:', glazingPrice);
 
     const roll = new Roll(name, basePrice, glazingPrice, sizeChoice);
     const totalPrice = roll.calculatePrice();
+    console.log('Total Price for the Roll:', totalPrice);
 
     // update cart and total
     cartCount += sizeChoice;
@@ -99,3 +130,7 @@ const addToCart = (element) => {
 
     updateCart();
 }
+
+document.querySelectorAll('.cart-button button').forEach(button => {
+    button.addEventListener('click', () => addToCart(button));
+})

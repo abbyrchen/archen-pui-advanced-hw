@@ -17,8 +17,14 @@
         <img src="../assets/logo/logo-01.svg" alt="Bun Bake Shop Logo">
       </div>
       <ul class="nav-links">
-        <li class="nav-item current"><a href=index.html>PRODUCTS</a></li>
-        <li class="nav-item"><a href=#cart>CART (<span id="cart-count">0</span> item(s)) Total: $<span id="cart-total">0.00</span></a></li>
+        <li class="nav-item"><a href=index.html class="link current">PRODUCTS</a></li>
+        <li class="nav-item">
+          <a href="#cart" class="link">CART</a><br>
+          <div class="cart-info">
+            <span id="cart-count">0</span> item(s)<br>
+            Total: $<span id="cart-total">0.00</span>
+          </div>
+        </li>
       </ul>
     </nav>
     
@@ -338,5 +344,6 @@
         </div>
       </section>
     </main>
+    <script src="js/app.js"></script>
   </body>
 </html>
