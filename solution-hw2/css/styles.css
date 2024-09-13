@@ -112,6 +112,10 @@ body {
     padding: 10px;
 }
 
+.price {
+    width: 70px;
+}
+
 .price p {
     font-size: 1.5em;
 }

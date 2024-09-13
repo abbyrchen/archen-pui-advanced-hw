@@ -94,6 +94,9 @@ function glazingChange(element) {
     const roll = new Roll(name, basePrice, glazingPrice, sizeChoice);
     const totalPrice = roll.calculatePrice();
 
+    const priceView = item.querySelector('.price p');
+    priceView.textContent = `$${totalPrice.toFixed(2)}`;
+
     return totalPrice;
 }
 
@@ -103,7 +106,7 @@ const cartPopup = (name, glazing, packSize, price) => {
     const popupMsg = document.getElementById('cart-popup-msg');
 
     // update pop up message
-    popupMsg.innerHTML = `Added to cart: <br><br> ${name} <br> ${glazing} glazing <br> Pack of ${packSize} <br> Price: $${price.toFixed(2)}`;
+    popupMsg.innerHTML = `Added to cart: <br><br> <strong>${name}</strong> <br> ${glazing} glazing <br> Pack of ${packSize} <br> Price: $${price.toFixed(2)}`;
 
     // display block for 3 seconds
     popup.style.display = 'block';
