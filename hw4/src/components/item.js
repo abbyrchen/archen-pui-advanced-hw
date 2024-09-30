@@ -50,7 +50,7 @@ const Item = ({ image, name, title, price, addToCart }) => {
         const item = {
             name,
             glazing: glazingOptions.find(option => option.price === selectedGlazing).name,
-            packSize: selectedPackSize.size,
+            packSize: selectedPackSize,
             price: totalPrice.toFixed(2)
         };
         addToCart(item);
