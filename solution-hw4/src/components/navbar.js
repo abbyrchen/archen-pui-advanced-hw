@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/logo/logo-01.svg';
 import '../App.css';
 
-const NavBar = () => {
+const NavBar = ({ cartItems, totalCartPrice }) => {
     return (
         <nav>
             <div className="site-logo">
@@ -13,7 +13,7 @@ const NavBar = () => {
                 <a href="index.jsx">PRODUCTS</a>
             </li>
             <li className="nav-item">
-                <a href="#cart">CART</a>
+                <a href="#cart">CART ({cartItems.length} item(s), Total: ${totalCartPrice})</a>
             </li>
             </ul>
         </nav>
