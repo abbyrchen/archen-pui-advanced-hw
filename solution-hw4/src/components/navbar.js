@@ -13,7 +13,12 @@ const NavBar = ({ cartItems, totalCartPrice }) => {
                 <a href="index.jsx">PRODUCTS</a>
             </li>
             <li className="nav-item">
-                <a href="#cart">CART ({cartItems.length} item(s), Total: ${totalCartPrice})</a>
+                <a href="#cart">
+                    CART
+                </a>
+                <span className="cart-info">
+                    {cartItems.length} item(s), Total: ${parseFloat(totalCartPrice).toFixed(2)}
+                </span>
             </li>
             </ul>
         </nav>

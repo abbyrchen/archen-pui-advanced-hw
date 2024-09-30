@@ -13,21 +13,26 @@ import Item from '../../components/item';
 
 const Homepage = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [totalCartPrice, setTotalCartPrice] = useState(0);
     const [popupVisible, setPopupVisible] = useState(false);
     const [popupContent, setPopupContent] = useState('');
 
     const addToCart = (item) => {
+        // add items to cartItems
         setCartItems([...cartItems, item]);
+
+        // add new item price to total
+        const newTotal = parseFloat(totalCartPrice) + parseFloat(item.price);
+        setTotalCartPrice(newTotal);
+
+        // set cart popup
         setPopupContent(`${item.name} - Glazing: ${item.glazing}, Pack Size: ${item.packSize}, Price: $${item.price}`);
         setPopupVisible(true);
 
-        // Hide popup after 3 seconds
         setTimeout(() => {
             setPopupVisible(false);
         }, 3000);
     };
-
-    const totalCartPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2);
 
     return (
         <div>
@@ -45,44 +50,44 @@ const Homepage = () => {
                 <section id="products">
                 <Item
                     image={originalCinnamonRoll}
-                    name="Original cinnamon oll"
+                    name="Original cinnamon roll"
                     title="original"
-                    price="2.49"
+                    price={2.49}
                     addToCart={addToCart}
                 />
                 <Item
                     image={appleCinnamonRoll}
                     name="Apple cinnamon roll"
                     title="apple"
-                    price="3.49"
+                    price={3.49}
                     addToCart={addToCart}
                 />
                 <Item
                     image={raisinCinnamonRoll}
                     name="Raisin cinnamon roll"
                     title="raisin"
-                    price="2.99"
+                    price={2.99}
                     addToCart={addToCart}
                 />
                 <Item
                     image={walnutCinnamonRoll}
                     name="Walnut cinnamon roll"
                     title="walnut"
-                    price="3.49"
+                    price={3.49}
                     addToCart={addToCart}
                 />
                 <Item
                     image={chocolateCinnamonRoll}
                     name="Double chocolate cinnamon roll"
-                    title="original"
-                    price="2.49"
+                    title="choco"
+                    price={2.49}
                     addToCart={addToCart}
                 />
                 <Item
                     image={strawberryCinnamonRoll}
                     name="Strawberry cinnamon roll"
                     title="strawberry"
-                    price="3.99"
+                    price={3.99}
                     addToCart={addToCart}
                 />
                 </section>

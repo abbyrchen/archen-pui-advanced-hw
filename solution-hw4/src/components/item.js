@@ -36,10 +36,12 @@ const Item = ({ image, name, title, price, addToCart }) => {
 
     // handle pack size choice
     const handlePackSize = (e) => {
-        const packSize = parseInt(e.target.value);
-        setPackSize(packSize);
-
-        setTotalPrice(calculatePrice(selectedGlazing, packSize));
+        const selectedSize = parseInt(e.target.value);
+        const selectedPack = packSizeOptions.find(option => option.size === selectedSize);
+        
+        setPackSize(selectedPack);
+    
+        setTotalPrice(calculatePrice(selectedGlazing, selectedPack.multiplier));
     };
 
     // handle adding to cart
@@ -47,11 +49,11 @@ const Item = ({ image, name, title, price, addToCart }) => {
         const item = {
             name,
             glazing: glazingOptions.find(option => option.price === selectedGlazing).name,
-            packSize: selectedPackSize,
+            packSize: selectedPackSize.size,
             price: totalPrice.toFixed(2)
         };
-        addToCart(item)
-    }
+        addToCart(item);
+    };
 
     return (
         <div className="product-item">
@@ -87,7 +89,7 @@ const Item = ({ image, name, title, price, addToCart }) => {
                                     type="radio"
                                     id={`${title}-size${option.size}`}
                                     name={`${title}-pack-size`}
-                                    value={option.multiplier}
+                                    value={option.size}
                                     onChange={handlePackSize}
                                 />
                                 <label htmlFor={`${title}-size${option.size}`}>{option.size}</label>
