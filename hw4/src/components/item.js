@@ -40,7 +40,7 @@ const Item = ({ image, name, title, price, addToCart }) => {
         const selectedSize = parseInt(e.target.value);
         const selectedPack = packSizeOptions.find(option => option.size === selectedSize);
     
-        setPackSize(selectedPack.multiplier); 
+        setPackSize(selectedPack.size); 
     
         setTotalPrice(calculatePrice(selectedGlazing, selectedPack.multiplier)); 
     };
@@ -53,6 +53,7 @@ const Item = ({ image, name, title, price, addToCart }) => {
             packSize: selectedPackSize,
             price: totalPrice.toFixed(2)
         };
+        console.log('packsize: ', selectedPackSize);
         addToCart(item);
     };
 
