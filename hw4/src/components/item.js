@@ -16,8 +16,8 @@ const packSizeOptions = [
 ];
 
 const Item = ({ image, name, title, price, addToCart }) => {
-    const [selectedGlazing, setGlazing] = useState(glazingOptions[0].price);
-    const [selectedPackSize, setPackSize] = useState(packSizeOptions[0].multiplier);
+    const [selectedGlazing, setGlazing] = useState(glazingOptions[0]);
+    const [selectedPackSize, setPackSize] = useState(packSizeOptions[0]);
     const [totalPrice, setTotalPrice] = useState(parseFloat(price));
     
     // calculate total price
@@ -29,31 +29,32 @@ const Item = ({ image, name, title, price, addToCart }) => {
 
     // handle glazing dropdown choice
     const handleGlazing = (e) => {
-        const glazingPrice = parseFloat(e.target.value);
-        setGlazing(glazingPrice);
+        const selectedGlazingOption = glazingOptions.find(option => option.price === parseFloat(e.target.value));
+        setGlazing(selectedGlazingOption);
 
-        setTotalPrice(calculatePrice(glazingPrice, selectedPackSize))
+        setTotalPrice(calculatePrice(selectedGlazingOption.price, selectedPackSize.multiplier));
     };
 
     // handle pack size choice
     const handlePackSize = (e) => {
         const selectedSize = parseInt(e.target.value);
         const selectedPack = packSizeOptions.find(option => option.size === selectedSize);
-    
-        setPackSize(selectedPack.size); 
-    
-        setTotalPrice(calculatePrice(selectedGlazing, selectedPack.multiplier)); 
+
+        setPackSize(selectedPack);
+
+        setTotalPrice(calculatePrice(selectedGlazing.price, selectedPack.multiplier));
     };
 
     // handle adding to cart
     const handleCart = () => {
         const item = {
             name,
-            glazing: glazingOptions.find(option => option.price === selectedGlazing).name,
-            packSize: selectedPackSize,
+            glazing: selectedGlazing.name, 
+            packSize: selectedPackSize.size,
             price: totalPrice.toFixed(2)
         };
-        console.log('packsize: ', selectedPackSize);
+
+        console.log('Adding to cart:', item); 
         addToCart(item);
     };
 
