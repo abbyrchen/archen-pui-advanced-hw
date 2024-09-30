@@ -43,6 +43,24 @@ nav {
   margin-top: 5px;
 }
 
+.cart-popup {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #333;
+  padding: 10px;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  font-size: 0.8em;
+}
+
+.cart-popup p {
+  margin: 2px 0;
+  line-height: 1.2;
+}
+
 .nav-item.current a {
   background-color: yellow;
   font-weight: 750;
@@ -186,4 +204,3 @@ body {
 .cart-button button:hover {
   background-color: yellow;
 }
-

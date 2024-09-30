@@ -15,7 +15,12 @@ const Homepage = () => {
     const [cartItems, setCartItems] = useState([]);
     const [totalCartPrice, setTotalCartPrice] = useState(0);
     const [popupVisible, setPopupVisible] = useState(false);
-    const [popupContent, setPopupContent] = useState('');
+    const [popupContent, setPopupContent] = useState({
+        name: '',
+        glazing: '',
+        packSize: '',
+        price: ''
+    });
 
     const addToCart = (item) => {
         // add items to cartItems
@@ -26,7 +31,12 @@ const Homepage = () => {
         setTotalCartPrice(newTotal);
 
         // set cart popup
-        setPopupContent(`${item.name} - Glazing: ${item.glazing}, Pack Size: ${item.packSize}, Price: $${item.price}`);
+        setPopupContent({
+            name: item.name,
+            glazing: item.glazing,
+            packSize: item.packSize,
+            price: item.price
+        });
         setPopupVisible(true);
 
         setTimeout(() => {
@@ -36,17 +46,16 @@ const Homepage = () => {
 
     return (
         <div>
-            <NavBar cartItems={cartItems} totalCartPrice={totalCartPrice} />
+            <NavBar 
+                cartItems={cartItems} 
+                totalCartPrice={totalCartPrice} 
+                popupVisible={popupVisible} 
+                popupContent={popupContent} 
+            />
             <header>
                 <h1>Our hand-made cinnamon rolls</h1>
             </header>
             <main>
-                {popupVisible && (
-                    <div className="cart-popup">
-                        <p>Added to cart: {popupContent}</p>
-                    </div>
-                )}
-
                 <section id="products">
                 <Item
                     image={originalCinnamonRoll}
