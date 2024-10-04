@@ -86,6 +86,25 @@ body {
   max-width: 1200px;
 }
 
+/* search bar styling */
+.search-bar {
+  margin-left: 100px;
+}
+
+.search-input {
+  padding: 8px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px;
+}
+
+.search-button:hover {
+  background-color: yellow;
+}
+
 /* main products section */
 #products {
   display: grid;
@@ -119,6 +138,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 5px;
+  padding: 0;
 }
 
 /* left column product content styling */
@@ -130,13 +150,14 @@ body {
 .left-column p {
   text-align: left;
   font-size: 1em;
-  padding: 10px;
 }
 
 .price p {
   font-size: 1.5em;
   width: 7px;
-
+  margin-top: 10px;
+  padding-left: 0px;
+  padding-top: 20px;
 }
 
 /* right column product styling */

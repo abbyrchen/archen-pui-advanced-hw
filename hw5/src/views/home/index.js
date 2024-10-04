@@ -10,6 +10,7 @@ import chocolateCinnamonRoll from '../../assets/products/double-chocolate-cinnam
 import strawberryCinnamonRoll from '../../assets/products/strawberry-cinnamon-roll.jpg';
 import NavBar from '../../components/navbar';
 import Item from '../../components/item';
+import SearchBar from '../../components/searchBar';
 
 const Homepage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -21,6 +22,43 @@ const Homepage = () => {
         packSize: '',
         price: ''
     });
+    const [filteredItems, setFilteredItems] = useState([])
+    const items = [
+        { name: 'Original Cinnamon Roll', price: '2.49'},
+        { name: 'Apple Cinnamon Roll', price: '3.49'},
+        { name: 'Raisin Cinnamon Roll', price: '2.99'},
+        { name: 'Walnut Cinnamon Roll', price: '3.49'},
+        { name: 'Double Chocolate Cinnamon Roll', price: '3.49'},
+        { name: 'Strawberry Cinnamon Roll', price: '3.99'}
+    ]
+    const [searchOccurred, setSearchOccurred] = useState(false)
+
+    // handle searching of items and filtered results
+    const handleSearch = (term) => {
+        setSearchOccurred(true);
+        const filteredResults = items.filter(item => item.name.toLowerCase().includes(term.toLowerCase()));
+        setFilteredItems(filteredResults);
+    }
+
+    // find image connected to roll name
+    const findImage = (name) => {
+        switch (name) {
+            case 'Original Cinnamon Roll':
+              return originalCinnamonRoll;
+            case 'Apple Cinnamon Roll':
+              return appleCinnamonRoll;
+            case 'Raisin Cinnamon Roll':
+              return raisinCinnamonRoll;
+            case 'Walnut Cinnamon Roll':
+                return walnutCinnamonRoll;
+            case 'Double Chocolate Cinnamon Roll':
+              return chocolateCinnamonRoll;
+            case 'Strawberry Cinnamon Roll':
+              return strawberryCinnamonRoll;
+            default:
+              return originalCinnamonRoll;
+          }
+    }
 
     const addToCart = (item) => {
         // add items to cartItems
@@ -55,52 +93,27 @@ const Homepage = () => {
             <header>
                 <h1>Our hand-made cinnamon rolls</h1>
             </header>
-            <main>
-                <section id="products">
-                <Item
-                    image={originalCinnamonRoll}
-                    name="Original cinnamon roll"
-                    title="original"
-                    price={2.49}
-                    addToCart={addToCart}
-                />
-                <Item
-                    image={appleCinnamonRoll}
-                    name="Apple cinnamon roll"
-                    title="apple"
-                    price={3.49}
-                    addToCart={addToCart}
-                />
-                <Item
-                    image={raisinCinnamonRoll}
-                    name="Raisin cinnamon roll"
-                    title="raisin"
-                    price={2.99}
-                    addToCart={addToCart}
-                />
-                <Item
-                    image={walnutCinnamonRoll}
-                    name="Walnut cinnamon roll"
-                    title="walnut"
-                    price={3.49}
-                    addToCart={addToCart}
-                />
-                <Item
-                    image={chocolateCinnamonRoll}
-                    name="Double chocolate cinnamon roll"
-                    title="choco"
-                    price={2.49}
-                    addToCart={addToCart}
-                />
-                <Item
-                    image={strawberryCinnamonRoll}
-                    name="Strawberry cinnamon roll"
-                    title="strawberry"
-                    price={3.99}
-                    addToCart={addToCart}
-                />
-                </section>
-            </main>
+
+            <div>
+                <SearchBar onSearch={handleSearch} />
+                
+                {searchOccurred && filteredItems.length === 0 ? (
+                    <p>No match!</p>
+                ) : (
+                    <div id="products">
+                        {(filteredItems.length > 0 ? filteredItems : items).map((item, index) => (
+                            <Item
+                                key={index}
+                                image={findImage(item.name)}
+                                name={item.name}
+                                title={item.name.toLowerCase()}
+                                price={parseFloat(item.price)}
+                                addToCart={addToCart}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
