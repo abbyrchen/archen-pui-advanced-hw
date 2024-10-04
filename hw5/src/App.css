@@ -150,41 +150,12 @@ body {
   padding: 8px;
 }
 
+.glazing-dropdown {
+  margin-bottom: 20px;
+}
+
 .glazing-dropdown select {
   font-size: 1.2em;
-}
-
-.pack-size {
-  display: flex;
-  gap: 5px;
-}
-
-.pack-size p {
-  font-size: 0.8em;
-}
-
-.pack-size input {
-  display: none;
-}
-
-.pack-size label {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border: 2px solid #000000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.pack-size label:hover {
-  background-color: #c5c5c5;
-}
-
-.pack-size input:checked + label {
-  background-color: #c5c5c5;
 }
 
 .cart-button {

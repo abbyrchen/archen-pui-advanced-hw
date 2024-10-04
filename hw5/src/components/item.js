@@ -36,13 +36,12 @@ const Item = ({ image, name, title, price, addToCart }) => {
     };
 
     // handle pack size choice
-    const handlePackSize = (e) => {
-        const selectedSize = parseInt(e.target.value);
-        const selectedPack = packSizeOptions.find(option => option.size === selectedSize);
+    const handlePackSize = (option) => {
+        
 
-        setPackSize(selectedPack);
+        setPackSize(option);
 
-        setTotalPrice(calculatePrice(selectedGlazing.price, selectedPack.multiplier));
+        setTotalPrice(calculatePrice(selectedGlazing.price, option.multiplier));
     };
 
     // handle adding to cart
@@ -87,17 +86,19 @@ const Item = ({ image, name, title, price, addToCart }) => {
 
                     <div className="pack-size">
                         {packSizeOptions.map((option, index) => (
-                            <React.Fragment key={index}>
-                                <input
-                                    type="radio"
-                                    id={`${title}-size${option.size}`}
-                                    name={`${title}-pack-size`}
-                                    value={option.size}
-                                    onChange={handlePackSize}
-                                />
-                                <label htmlFor={`${title}-size${option.size}`}>{option.size}</label>
-                                <br />
-                            </React.Fragment>
+                            <label
+                                key={index}
+                                htmlFor={`${title}-size${option.size}`}
+                                onClick={() => handlePackSize(option)}
+                                style={{
+                                    backgroundColor: selectedPackSize.size === option.size ? '#c5c5c5' : 'white',
+                                    cursor: 'pointer',
+                                    padding: '10px',
+                                    border: '2px solid #000000',
+                                    marginLeft: '10px'
+                                }}>
+                                {option.size}
+                            </label>
                         ))}
                     </div>
 
