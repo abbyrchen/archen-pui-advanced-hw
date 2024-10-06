@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 
 const glazingOptions = [
@@ -18,7 +18,11 @@ const packSizeOptions = [
 const Item = ({ image, name, title, price, addToCart }) => {
     const [selectedGlazing, setGlazing] = useState(glazingOptions[0]);
     const [selectedPackSize, setPackSize] = useState(packSizeOptions[0]);
-    const [totalPrice, setTotalPrice] = useState(parseFloat(price));
+    const [totalPrice, setTotalPrice] = useState(price);
+
+    useEffect(() => {
+        setTotalPrice(price);
+    }, [price]);
     
     // calculate total price
     const calculatePrice = (glazingPrice, packMultiplier) => {
@@ -37,10 +41,7 @@ const Item = ({ image, name, title, price, addToCart }) => {
 
     // handle pack size choice
     const handlePackSize = (option) => {
-        
-
         setPackSize(option);
-
         setTotalPrice(calculatePrice(selectedGlazing.price, option.multiplier));
     };
 

@@ -87,8 +87,16 @@ body {
 }
 
 /* search bar styling */
+.search-and-sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .search-bar {
-  margin-left: 100px;
+  margin-left: 140px;
 }
 
 .search-input {
@@ -99,11 +107,38 @@ body {
 
 .search-button {
   padding: 8px;
+  cursor: pointer;
 }
 
 .search-button:hover {
   background-color: yellow;
 }
+
+.sort-dropdown-select {
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#no-match {
+  text-align: center;
+}
+
+/* Sort dropdown styling */
+.sort-dropdown-container {
+  margin-left: 10px;
+}
+
+.sort-dropdown-select {
+  padding: 5px;
+
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 
 /* main products section */
 #products {

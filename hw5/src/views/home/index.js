@@ -1,6 +1,6 @@
 // create react component for homepage
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import originalCinnamonRoll from '../../assets/products/original-cinnamon-roll.jpg';
 import appleCinnamonRoll from '../../assets/products/apple-cinnamon-roll.jpg';
@@ -11,6 +11,7 @@ import strawberryCinnamonRoll from '../../assets/products/strawberry-cinnamon-ro
 import NavBar from '../../components/navbar';
 import Item from '../../components/item';
 import SearchBar from '../../components/searchBar';
+import SortDropdown from '../../components/sortDropdown';
 
 const Homepage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -22,16 +23,17 @@ const Homepage = () => {
         packSize: '',
         price: ''
     });
-    const [filteredItems, setFilteredItems] = useState([])
     const items = [
-        { name: 'Original Cinnamon Roll', price: '2.49'},
-        { name: 'Apple Cinnamon Roll', price: '3.49'},
-        { name: 'Raisin Cinnamon Roll', price: '2.99'},
-        { name: 'Walnut Cinnamon Roll', price: '3.49'},
-        { name: 'Double Chocolate Cinnamon Roll', price: '3.49'},
-        { name: 'Strawberry Cinnamon Roll', price: '3.99'}
-    ]
-    const [searchOccurred, setSearchOccurred] = useState(false)
+        { name: 'Original Cinnamon Roll', price: 2.49},
+        { name: 'Apple Cinnamon Roll', price: 3.49},
+        { name: 'Raisin Cinnamon Roll', price: 2.99},
+        { name: 'Walnut Cinnamon Roll', price: 3.49},
+        { name: 'Double Chocolate Cinnamon Roll', price: 3.49},
+        { name: 'Strawberry Cinnamon Roll', price: 3.99}
+    ];
+    const [filteredItems, setFilteredItems] = useState([]);
+    const [sortSelection, setSortSelection] = useState("");
+    const [searchOccurred, setSearchOccurred] = useState(false);
 
     // handle searching of items and filtered results
     const handleSearch = (term) => {
@@ -60,6 +62,7 @@ const Homepage = () => {
           }
     }
 
+    // add to cart function
     const addToCart = (item) => {
         // add items to cartItems
         setCartItems([...cartItems, item]);
@@ -82,8 +85,34 @@ const Homepage = () => {
         }, 3000);
     };
 
+    // sorting dropdown logic
+    useEffect(() => {
+        const applySorting = (list) => {
+            if (sortSelection !== '') {
+                const sortedItems = [...list].sort((a, b) => {
+                    if (sortSelection === 'name') {
+                        return a.name.localeCompare(b.name);
+                    } else if (sortSelection === 'price') {
+                        return parseFloat(a.price) - parseFloat(b.price);
+                    }
+                    return 0;
+                });
+                return sortedItems;
+            }
+            return list;
+        };
+
+        // apply sorting to filtered items (if searching occurred) or full list of items
+        if (searchOccurred) {
+            setFilteredItems(applySorting(filteredItems));
+        } else {
+            setFilteredItems(applySorting(items));
+        }
+    }, [sortSelection, searchOccurred, filteredItems, items]);
+
     return (
         <div>
+            {/* navbar */}
             <NavBar 
                 cartItems={cartItems} 
                 totalCartPrice={totalCartPrice} 
@@ -95,10 +124,15 @@ const Homepage = () => {
             </header>
 
             <div>
-                <SearchBar onSearch={handleSearch} />
+                {/* search bar and sort dropdown */}
+                <div className="search-and-sort">
+                    <SearchBar onSearch={handleSearch} />
+                    <SortDropdown setSortDir={setSortSelection} />
+                </div>
                 
+                {/* view products */}
                 {searchOccurred && filteredItems.length === 0 ? (
-                    <p>No match!</p>
+                    <p id="no-match">No match!</p>
                 ) : (
                     <div id="products">
                         {(filteredItems.length > 0 ? filteredItems : items).map((item, index) => (
