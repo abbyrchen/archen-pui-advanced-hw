@@ -1,5 +1,6 @@
 import React from 'react';
 
+{/* dropdown that sorts items by name or base price (ascending) */}
 const SortDropdown = ({ setSortDir }) => {
     return (
         <div className="sort-dropdown-container">

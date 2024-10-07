@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+{/* search bar */}
 const SearchBar = ({onSearch}) => {
     const [searchInput, setSearchInput] = useState("");
 
