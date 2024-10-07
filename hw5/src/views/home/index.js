@@ -12,9 +12,11 @@ import NavBar from '../../components/navbar';
 import Item from '../../components/item';
 import SearchBar from '../../components/searchBar';
 import SortDropdown from '../../components/sortDropdown';
+import Cart from '../../components/cart';
 
 const Homepage = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [cartVisible, setCartVisible] = useState(false);
     const [totalCartPrice, setTotalCartPrice] = useState(0);
     const [popupVisible, setPopupVisible] = useState(false);
     const [popupContent, setPopupContent] = useState({
@@ -64,8 +66,16 @@ const Homepage = () => {
 
     // add to cart function
     const addToCart = (item) => {
+        const cartItem = {
+            name: item.name,
+            glazing: item.glazing,
+            packSize: item.packSize,
+            price: item.price,
+            image: findImage(item.name)
+        };
+
         // add items to cartItems
-        setCartItems([...cartItems, item]);
+        setCartItems([...cartItems, cartItem]);
 
         // add new item price to total
         const newTotal = parseFloat(totalCartPrice) + parseFloat(item.price);
@@ -84,6 +94,11 @@ const Homepage = () => {
             setPopupVisible(false);
         }, 3000);
     };
+
+    // if user clicks on cart
+    const cartToggle = () => {
+        setCartVisible(!cartVisible);
+    };    
 
     // sorting dropdown logic
     useEffect(() => {
@@ -114,14 +129,20 @@ const Homepage = () => {
         <div>
             {/* navbar */}
             <NavBar 
-                cartItems={cartItems} 
-                totalCartPrice={totalCartPrice} 
+                cartToggle={cartToggle}
                 popupVisible={popupVisible} 
                 popupContent={popupContent} 
             />
             <header>
                 <h1>Our hand-made cinnamon rolls</h1>
             </header>
+
+            {cartVisible && (
+                <Cart 
+                    cartItems={cartItems} 
+                    totalCartPrice={totalCartPrice} 
+                />
+            )}
 
             <div>
                 {/* search bar and sort dropdown */}
