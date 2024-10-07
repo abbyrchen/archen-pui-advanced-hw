@@ -9,20 +9,23 @@ const Cart = ({ cartItems, totalCartPrice }) => {
                     <h3>Total: ${parseFloat(totalCartPrice).toFixed(2)}</h3>
                 </div>
             </div>
-            <div className="cart-items">
-                {cartItems.map((item, index) => (
-                    <div key={index} className="cart-item">
+
+            {cartItems.length === 0 ? (
+                <p id="empty-cart">The cart is empty!</p>
+            ) : (
+                <div className="cart-items">
+                    {cartItems.map((item, index) => (
+                        <div key={index} className="cart-item">
                         <img src={item.image} alt={item.name} className="cart-item-image" />
-                        <div className="cart-item-details">
-                            <h4>{item.name}</h4>
-                            <p>Glazing: {item.glazing}</p>
-                            <p>Pack size: {item.packSize}</p>
-                            <p>${item.price}</p>
-                            <button>Remove</button>
+                        <h3>{item.name}</h3>
+                        <p>Glazing: {item.glazing}</p>
+                        <p>Pack size: {item.packSize}</p>
+                        <p>${item.price}</p>
+                        <button>Remove</button>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
