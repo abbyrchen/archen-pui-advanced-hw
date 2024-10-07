@@ -108,11 +108,22 @@ nav {
   text-align: center;
 }
 
+.cart-item h3 {
+  margin: 5px 0;
+}
+
+.cart-item p {
+  margin: 3px 0;
+}
+
 #empty-cart {
   text-align: center;
   margin-bottom: 40px;
 }
 
+#remove-button {
+  margin-top: 8px;
+}
 
 /* header styling */
 header h1 {
