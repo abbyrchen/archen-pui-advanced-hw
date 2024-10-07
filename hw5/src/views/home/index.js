@@ -100,6 +100,17 @@ const Homepage = () => {
         setCartVisible(!cartVisible);
     };    
 
+    // remove item from cart
+    const removeItem = (index) => {
+        const currItem = cartItems[index];
+        const newCartItems = cartItems.filter((_, i) => i !== index);
+        setCartItems(newCartItems);
+
+        // update total price
+        const newTotal = parseFloat(totalCartPrice) - parseFloat(currItem.price);
+        setTotalCartPrice(newTotal);
+    };
+
     // sorting dropdown logic
     useEffect(() => {
         const applySorting = (list) => {
@@ -137,10 +148,12 @@ const Homepage = () => {
                 <h1>Our hand-made cinnamon rolls</h1>
             </header>
 
+            {/* viewing cart */}
             {cartVisible && (
                 <Cart 
                     cartItems={cartItems} 
                     totalCartPrice={totalCartPrice} 
+                    removeItem={removeItem}
                 />
             )}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cart = ({ cartItems, totalCartPrice }) => {
+const Cart = ({ cartItems, totalCartPrice, removeItem }) => {
     return (
         <div className="cart-container">
             <div className="cart-head">
@@ -21,7 +21,7 @@ const Cart = ({ cartItems, totalCartPrice }) => {
                         <p>Glazing: {item.glazing}</p>
                         <p>Pack size: {item.packSize}</p>
                         <p>${item.price}</p>
-                        <button>Remove</button>
+                        <button onClick={() => removeItem(index)}>Remove</button>
                         </div>
                     ))}
                 </div>
