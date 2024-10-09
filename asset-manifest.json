@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/archen-pui-advanced-hw/static/css/main.770ae22f.css",
-    "main.js": "/archen-pui-advanced-hw/static/js/main.56846249.js",
+    "main.js": "/archen-pui-advanced-hw/static/js/main.a35ac3e4.js",
     "static/js/453.4e1442ac.chunk.js": "/archen-pui-advanced-hw/static/js/453.4e1442ac.chunk.js",
     "static/media/apple-cinnamon-roll.jpg": "/archen-pui-advanced-hw/static/media/apple-cinnamon-roll.49f60af85b0e955dad15.jpg",
     "static/media/double-chocolate-cinnamon-roll.jpg": "/archen-pui-advanced-hw/static/media/double-chocolate-cinnamon-roll.dc7182fd330f44e75603.jpg",
@@ -12,11 +12,11 @@
     "static/media/walnut-cinnamon-roll.jpg": "/archen-pui-advanced-hw/static/media/walnut-cinnamon-roll.e51000e24310a638db27.jpg",
     "index.html": "/archen-pui-advanced-hw/index.html",
     "main.770ae22f.css.map": "/archen-pui-advanced-hw/static/css/main.770ae22f.css.map",
-    "main.56846249.js.map": "/archen-pui-advanced-hw/static/js/main.56846249.js.map",
+    "main.a35ac3e4.js.map": "/archen-pui-advanced-hw/static/js/main.a35ac3e4.js.map",
     "453.4e1442ac.chunk.js.map": "/archen-pui-advanced-hw/static/js/453.4e1442ac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.770ae22f.css",
-    "static/js/main.56846249.js"
+    "static/js/main.a35ac3e4.js"
   ]
 }
