@@ -75,11 +75,21 @@ const Homepage = () => {
         };
 
         // add items to cartItems
-        setCartItems([...cartItems, cartItem]);
+        const newCartItems = [...cartItems, cartItem];
+        setCartItems(newCartItems);
+
+        // store cart in local storage
+        localStorage.setItem('cartItems', JSON.stringify(newCartItems));
 
         // add new item price to total
         const newTotal = parseFloat(totalCartPrice) + parseFloat(item.price);
         setTotalCartPrice(newTotal);
+
+        // store total cart price
+        localStorage.setItem('totalCartPrice', newTotal);
+
+        console.log("Updated cart in localStorage:", JSON.parse(localStorage.getItem('cartItems')));
+        console.log("Updated total price in localStorage:", localStorage.getItem('totalCartPrice'));
 
         // set cart popup
         setPopupContent({
@@ -106,9 +116,18 @@ const Homepage = () => {
         const newCartItems = cartItems.filter((_, i) => i !== index);
         setCartItems(newCartItems);
 
+        // store cart in local storage
+        localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+
         // update total price
         const newTotal = parseFloat(totalCartPrice) - parseFloat(currItem.price);
         setTotalCartPrice(newTotal);
+
+        // store price in local storage
+        localStorage.setItem('totalCartPrice', newTotal);
+
+        console.log("Updated cart in localStorage after removing:", JSON.parse(localStorage.getItem('cartItems')));
+        console.log("Updated total price in localStorage after removing:", localStorage.getItem('totalCartPrice'));
     };
 
     // sorting dropdown logic
@@ -128,13 +147,22 @@ const Homepage = () => {
             return list;
         };
 
-        // apply sorting to filtered items (if searching occurred) or full list of items
-        if (searchOccurred) {
-            setFilteredItems(applySorting(filteredItems));
-        } else {
-            setFilteredItems(applySorting(items));
+        const sortedList = searchOccurred ? applySorting(filteredItems) : applySorting(items);
+
+        // only update the filteredItems state if it's different from the current state
+        if (JSON.stringify(filteredItems) !== JSON.stringify(sortedList)) {
+            setFilteredItems(sortedList);
         }
     }, [sortSelection, searchOccurred, filteredItems, items]);
+
+    // useEffect hook to load cart items and total price with local storage
+    useEffect(() => {
+        const storageCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const storageTotalPrice = parseFloat(localStorage.getItem('totalCartPrice')) || 0;
+    
+        setCartItems(storageCartItems);
+        setTotalCartPrice(storageTotalPrice);
+    }, []);
 
     return (
         <div>
