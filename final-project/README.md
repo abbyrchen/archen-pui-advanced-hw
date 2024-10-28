@@ -204,19 +204,19 @@ How would you use Generative AI responsibly?
 
 ### *Idea 1*
 
-![Personal Portfolio](images/personal_portfolio.png)
+![Personal Portfolio](images/personal_portfolio)
 
 My first idea for my final project is to create an immersive 3D navigable portfolio that demonstrates my design skills, my aesthetic, and my interests. My current portfolio is basic and communicates my projects but I'd like to create one that demonstrates my programming skills along with my creativity. I plan to put a heavy focus on visual design, interactions, and animations. Viewers can see my "Abbyverse" and enter different islands/structures to learn different things about me-- from my UX work to fashion to hobbies. I want this website to be a visual experience that emphasizes exploration throughout the site. This design will be accessible because keyboard controls can be used to navigate between 'islands' , the images will have alt text, and I'm contemplating the idea of having an alternative that lists the information on the site as a simple list. In terms of information on the site, I want to include my Lunar Gala/fashion experience, my hobbies (staying active, volleyball), traveling, UX design projects, graphic design/other artwork.
 
 ### *Idea 2*
 
-![Runway Archive](images/runway_archive.png)
+![Runway Archive](images/runway_archive)
 
 My second idea for my final project is to create a visually appealing, swipeable archive that presents designers’ runway collections across different seasons. Current sites/apps that do this don't have an interface that matches with high-fashion and are usually hard to use. Again with this idea, I want to create a visual experience that exudes high-fashion. My design will be interactive because users can swipe through different seasons and click in to view certain collections and their looks. It will be accessible with alt text and keyboard controls.
 
 ### *Idea 3*
 
-![Book Tracker](images/book_tracker.png)
+![Book Tracker](images/book_tracker)
 
 My last idea for my final project is to design a digital bookshelf where users can log their reading progress and books, view their own reviews, and customize the interface to reflect the mood of each book. Users view their bookshelf on their homescreen and can click on a book to open it. From there, they can add text reviews, update progress, write ratings, and change the background of the screen to represent the mood of the book. Additionally, users can add new books. This design will be engaging with a modern interface and animations to open the book and add more books.
 
