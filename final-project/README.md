@@ -204,28 +204,36 @@ How would you use Generative AI responsibly?
 
 ### *Idea 1*
 
-![title for sketch1](images/sketch1.png)
+![Personal Portfolio](images/personal_portfolio.png)
 
-Add a few sentences about your design. Briefly state the motivation of each project idea. Example questions to answer:
-
-* What is the basic idea of your final project? (1-2 sentences)  
-* How do you plan to make your design interactive and engaging?  
-* How do you plan to make your design accessible?  
-* What information do you specifically want to convey and include on your website?
+My first idea for my final project is to create an immersive 3D navigable portfolio that demonstrates my design skills, my aesthetic, and my interests. My current portfolio is basic and communicates my projects but I'd like to create one that demonstrates my programming skills along with my creativity. I plan to put a heavy focus on visual design, interactions, and animations. Viewers can see my "Abbyverse" and enter different islands/structures to learn different things about me-- from my UX work to fashion to hobbies. I want this website to be a visual experience that emphasizes exploration throughout the site. This design will be accessible because keyboard controls can be used to navigate between 'islands' , the images will have alt text, and I'm contemplating the idea of having an alternative that lists the information on the site as a simple list. In terms of information on the site, I want to include my Lunar Gala/fashion experience, my hobbies (staying active, volleyball), traveling, UX design projects, graphic design/other artwork.
 
 ### *Idea 2*
 
-…
+![Runway Archive](images/runway_archive.png)
+
+My second idea for my final project is to create a visually appealing, swipeable archive that presents designers’ runway collections across different seasons. Current sites/apps that do this don't have an interface that matches with high-fashion and are usually hard to use. Again with this idea, I want to create a visual experience that exudes high-fashion. My design will be interactive because users can swipe through different seasons and click in to view certain collections and their looks. It will be accessible with alt text and keyboard controls.
 
 ### *Idea 3*
 
-…
+![Book Tracker](images/book_tracker.png)
+
+My last idea for my final project is to design a digital bookshelf where users can log their reading progress and books, view their own reviews, and customize the interface to reflect the mood of each book. Users view their bookshelf on their homescreen and can click on a book to open it. From there, they can add text reviews, update progress, write ratings, and change the background of the screen to represent the mood of the book. Additionally, users can add new books. This design will be engaging with a modern interface and animations to open the book and add more books.
 
 ## Feedback Summary
 
-Summarize all the critiques you received during the lab session (\~300 words). 
+For my first project idea, a 3D metaverse portfolio, the main critiques focused on accessibility and navigation. Given the potential complexity of 3D art and limited text elements, users might find it challenging to navigate without clear guidance. 
+
+The second idea involves showcasing curated collections or designers. Feedback here emphasized the importance of narrowing down the scope to keep the content focused and manageable. My classmates suggested highlighting a few key collections or designers, allowing users to dive deeper into specific areas. One also recommended using the Swiper library for smoother transitions between items. They noted the importance of defining an optimal screen size early on as this would influence which animation libraries best support the design’s visual flow.
+
+My third idea, a customizable digital bookshelf, received the most positive feedback. This concept would allow users to share their reading progress, reviews, ratings, and moods with friends, possibly by integrating with StoryGraph. Technical questions included which API would be best and whether book covers should load automatically or be added manually by users. Classmates liked that this idea has room for creativity with personalization options, animations, and customization possibilities, making it highly engaging for users.
 
 ## Feedback Digestion
 
-Digest the feedback you got in the lab (\~300 words). Indicate which critique you will act on in your next design and why you chose to incorporate/dismiss pieces of critique.
+Overall, I received strong feedback on each project, along with ideas for further development. Following the session, I realized accessibility could be a concern with the 3D metaverse portfolio, so I brainstormed solutions like incorporating keyboard controls and adding a simplified, alternative view that lists the website's information. I also thought about enhancing navigation: users could click on individual islands, return to a central homepage for an overall view, or move between islands using on-screen arrows.
+
+For the runway archive project, my classmates suggested libraries that could streamline swipe interactions, especially Swiper. I was initially concerned about the project’s scope, but feedback to focus on specific designers or collections provided a helpful direction. I also briefly considered including a feature to save looks to add complexity, but feedback suggested this would be unnecessary.
+
+For my third idea, a customizable digital bookshelf, I really liked the suggestion to add a social feature where users could share books, progress, reviews, and mood. This led to a discussion on APIs, where GoodReads was suggested initially, though a classmate noted it is no longer publicly accessible. I’m now researching alternative APIs, as integrating one seems important for the project’s functionality.
+
 
