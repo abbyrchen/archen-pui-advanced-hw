@@ -242,6 +242,7 @@ Outline how you plan to use Generative AI tools to aid in the implementation.
 ### *Responsible Use*
 
 How would you use Generative AI responsibly? 
+
 I aim to use Generative AI tools responsibly by leveraging them as assistants rather than primary creators. My approach is to experiment and solve issues independently first, turning to AI only for complex debugging or areas outside my current expertise, like WebGL physics or vector math. Additionally, by only using AI for code assistance on components that don’t impact the core interactive design, I maintain full creative control while building essential technical skills. This approach ensures that the final product reflects my unique design vision and personal effort, making AI a supplementary, rather than primary, part of my creative process.
 
 ---
