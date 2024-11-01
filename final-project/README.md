@@ -125,23 +125,33 @@ Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-gener
 
 ## Project Description
 
-Briefly restate your motivation and a short description of your project.
+My motivation is to transform my personal portfolio from a static, basic project showcase into a dynamic reflection of my creativity and design capabilities. I aim to craft a unique, visually engaging site that represents my aesthetic and skills, while also building it from scratch to have full control over updates and customizations. By coding it myself, I’m creating a flexible portfolio I can continue to develop and use throughout my career post-graduation.
 
 ## High-Fi Prototypes
 
 ### *Prototype 1*
 
-![title for prototype1](images/prototype1.png)
+![Swiping Project View](images/prototype1.png)
 
-A brief description and summary of the user feedback (\<100 words, 2 images) 
+Overall, all the users I interviewed preferred this portfolio version. They found the project swipe-on-scroll feature visually engaging, describing it as 'cool' and 'interesting.' They recommended a project count indicator (e.g., 1/5) for navigation. While I couldn't replicate the exact interaction in Figma as I'd plan to code it, I explained this to users after testing. They responded positively to the idea of scrolling to move through projects instead of dragging, which the prototype currently requires.
 
 ### *Prototype 2*
 
-…
+![Horizontal Scroll View](images/prototype2_image1)(images/prototype2_image2)
+
+Users liked the horizontal scroll but wanted an indicator showing the number of projects. One user didn’t realize more projects were available and tried to drag the project, suggesting a clearer cue for horizontal scrolling is needed. I couldn’t replicate my idea of showing projects in black and white that turn to color on scroll in the prototype, but it’s a feature I plan to include on the final site.
 
 ## Usability Test
 
-Discuss the user feedback you got during the evaluation / usability test (\~300 words). Indicate which feedback you implemented, inspired new directions, or otherwise influenced your final design. 
+During usability testing, I gathered insightful feedback that guided improvements and inspired new directions for my portfolio’s design. One useful suggestion was to add an indicator showing the current project out of the total number. A user expressed that this would help them track their progress as they navigate the projects. Implementing this feature provides users with a sense of orientation, enhancing the overall navigation experience.
+
+Another comment was to adjust the card orientation and avoid the layered layout. Although the Figma prototype required dragging due to software limitations, I plan to have projects move based on scrolling in the developed version. Additionally, this user experienced a restart issue where dragging would take them back to the top of the site. This was specific to the prototype and highlighted the importance of preventing similar disruptions in the final coded version.
+
+The user also suggested increasing interactivity with elements that slide in, like images or text, to enhance visual appeal. If time permits after implementing the main features, I’ll add these interactions to sections like the "About" page for a richer user experience. Another suggestion was to expand the footer with more detailed contact information. To address this, I’ll add links and additional options, making the footer more informative.
+
+Feedback also identified navigation issues, such as the resume link not working. I will link it to a downloadable PDF of my resume in the final version. Lastly, a user suggested adding a subtle effect to the homepage’s caret icon. I plan to implement a fade-out effect as the user scrolls down, with the caret reappearing upon scrolling back up, adding polish and interactivity.
+
+In summary, user feedback was instrumental in refining my design by improving navigation, adding interactivity, and ensuring a user-centered approach to the final portfolio layout.
 
 ## Updated Designs
 
