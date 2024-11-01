@@ -131,13 +131,15 @@ My motivation is to transform my personal portfolio from a static, basic project
 
 ### *Prototype 1*
 
-![Swiping Project View](images/prototype1.png)
+![Swiping Project View](images/card_swiping_prototype)
+![Project Cards](images/project_cards_test)
+![Card Swiping](images/card_swiping)
 
 Overall, all the users I interviewed preferred this portfolio version. They found the project swipe-on-scroll feature visually engaging, describing it as 'cool' and 'interesting.' They recommended a project count indicator (e.g., 1/5) for navigation. While I couldn't replicate the exact interaction in Figma as I'd plan to code it, I explained this to users after testing. They responded positively to the idea of scrolling to move through projects instead of dragging, which the prototype currently requires.
 
 ### *Prototype 2*
 
-![Horizontal Scroll View](images/prototype2_image1)(images/prototype2_image2)
+![Horizontal Scroll View](images/horizontal_scroll_prototype)
 
 Users liked the horizontal scroll but wanted an indicator showing the number of projects. One user didn’t realize more projects were available and tried to drag the project, suggesting a clearer cue for horizontal scrolling is needed. I couldn’t replicate my idea of showing projects in black and white that turn to color on scroll in the prototype, but it’s a feature I plan to include on the final site.
 
@@ -155,56 +157,92 @@ In summary, user feedback was instrumental in refining my design by improving na
 
 ## Updated Designs
 
-Show screenshots of your updated design based on the user feedback (\<100 words, \~2 images).
+![Updated Swiping Projects](images/updated_swiping_cards)
+![Updated Footer](images/updated_footer)
+
+The main updates to the prototype included adding a visual indicator showing the current project’s position within the sequence and enhancing the footer with contact information like LinkedIn, email, and Instagram to improve accessibility. For the final developed site, I’ll also adjust the interaction to enable smooth scrolling rather than swiping and incorporate microinteractions to make the user experience more engaging and responsive.
 
 ## Feedback Summary
 
-Summarize the feedback you received in the lab session and discuss how it influenced your design (\~300 words). 
+Although I couldn’t attend the lab session for feedback, I scheduled an individual meeting with my TA, Cella, to discuss my revised project idea. This meeting was invaluable, as it provided some feedback on my initial prototypes, particularly the horizontal scroll interaction, which Cella noted didn’t feel intuitive for users. Although I ultimately chose not to use that design, her insights made me more mindful of creating clear, user-friendly interactions. This reflection led me to rethink the card swiping interaction, ensuring that it felt natural and guided users effectively.
+
+In addition to my TA’s feedback, I conducted extra rounds of user testing to gather broader insights into the design’s usability and effectiveness. During these sessions, I interviewed eight users, each offering unique perspectives and suggestions. For example, users recommended adding a clear indicator for navigating between projects, ensuring they felt oriented and aware of their position within the portfolio. They also suggested more dynamic interactions, like subtle animations, to make the portfolio visually engaging.
+
+Overall, this combination of feedback sessions and user testing significantly influenced the final design. The process highlighted the importance of balancing creativity with intuitive design elements, ensuring each interaction felt seamless.
 
 ## Milestones
 
-Outline weekly milestones to plan your expected implementation progress until the end of the semester (\~300 words). 
+Outline weekly milestones to plan your expected implementation progress until the end of the semester. 
 
 ### *Implementation Plan*
 
-- [ ] Week 9 Oct 28 \- Nov 1:
+- [X] Week 9 Oct 28 \- Nov 1:
   - [X] FP1 due
-  - [ ] ...
+  - [X] Create prototype ideas for personal portfolio
+  - [X] Interview users on 2 prototypes
+  - [X] Add prototypes to slide deck for feedback
+  - [X] Meet with Cella to discuss revised project idea
+  - [X] Add interactions to prototypes
+  - [X] Update prototypes based on feedback
+  - [X] Work on FP2
   
 - [ ] Week 10 Nov 4 \- Nov 8:   
-  - [ ] FP2 due
+  - [X] FP2 due
+  - [ ] Research / get acquainted to libraries needed for development
+  - [ ] Figure out overall framework of site (trying to use React)
+  - [ ] Experiment with WebGL for main complexity
+  - [ ] Create navbar
+  - [ ] Create footer
 
-- [ ] Week 11 Nov 11 \- Nov 15:  
-- [ ] Week 12 Nov 18 \- Nov 22:   
+- [ ] Week 11 Nov 11 \- Nov 15:
+  - [ ] Begin project swiping interaction
+  - [ ] Begin WebGL portion
+      
+- [ ] Week 12 Nov 18 \- Nov 22:
+  - [ ] Work on project swiping interaction
+  - [ ] Work on WebGL portion
+  - [ ] Start implementing About page
+      
 - [ ] Week 13 Nov 25 \- Nov 29:  
-
-  - [ ] Thanksgiving  
-- [ ] Week 14 Dec 2 \- Dec 6:  
+  - [ ] Implement Play page
+  - [ ] Complete About page
+  - [ ] Refine project swiping interaction
+  - [ ] Refine WebGL portion
+  - [ ] Thanksgiving
+    
+- [ ] Week 14 Dec 2 \- Dec 6:
+  - [ ] Link resume to PDF
+  - [ ] If time allows, add microinteractions like images fading in
   - [ ] FP4 due 
 
 ### *Libraries and Other Components*
 
 List the JS libraries and other components (if applicable) that you plan to use. 
-* 
-
+* WebGL
+* GSAP
+* ScrollTrigger
+* React
 
 ## Generative AI Use Plan
 
-Outline how you plan to use Generative AI tools to aid in the implementation (\~300 words).
+Outline how you plan to use Generative AI tools to aid in the implementation.
 
 ### *Tool Use*
 
  What would you use? Edit the list given your plan. For each tool, explain briefly on what do you expect Generative AI to help you with and what might it not be able to help you with.
 
 * ChatGPT  
-  * I will use it for … because it can help me …  
-  * I will not use it for … because it might not be able to help me with …   
+  * I will use ChatGPT for coding assistance and specific troubleshooting, especially for areas involving complex logic or less familiar concepts, like vector math and WebGL implementation. ChatGPT will be helpful for debugging when I encounter issues in my WebGL effects or need help fine-tuning the spinning graphic on my "About" page. 
+  * I will not use it for setting up my basic framework and the foundational structure of the site. I want to build these components myself to have full control over the design and understand every part of my codebase. Additionally, I won’t use it for creative decisions, such as the design of interactive elements on the "Play" or "About" pages, as I want to develop those ideas independently.
 * GitHub Copilot  
-* ...
+  * I will use GitHub Copilot if I encounter challenges in complex state updates. I want to use React for my project, and while I am mostly confident I can do this myself, if I come across challenges integrating it with all the complex interactions involved, I will use Copilot for some help.
+  * I will not rely on Copilot for intricate design logic or WebGL-specific code, as I plan to customize these aspects fully and refine the interaction dynamics on my own.
+
 
 ### *Responsible Use*
 
 How would you use Generative AI responsibly? 
+I aim to use Generative AI tools responsibly by leveraging them as assistants rather than primary creators. My approach is to experiment and solve issues independently first, turning to AI only for complex debugging or areas outside my current expertise, like WebGL physics or vector math. Additionally, by only using AI for code assistance on components that don’t impact the core interactive design, I maintain full creative control while building essential technical skills. This approach ensures that the final product reflects my unique design vision and personal effort, making AI a supplementary, rather than primary, part of my creative process.
 
 ---
 
