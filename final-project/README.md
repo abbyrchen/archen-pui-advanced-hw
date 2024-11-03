@@ -135,11 +135,15 @@ My motivation is to transform my personal portfolio from a static, basic project
 ![Project Cards](images/project_cards_test)
 ![Card Swiping](images/card_swiping)
 
+Link: https://www.figma.com/proto/NJSHsJ1qLCIekYpe1ys8fi/05-430-final-project?node-id=54-19506&node-type=frame&viewport=691%2C268%2C0.08&t=sZPAxkr9Aqx9EQGJ-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=54%3A19506&show-proto-sidebar=1
+
 Overall, all the users I interviewed preferred this portfolio version. They found the project swipe-on-scroll feature visually engaging, describing it as 'cool' and 'interesting.' They recommended a project count indicator (e.g., 1/5) for navigation. While I couldn't replicate the exact interaction in Figma as I'd plan to code it, I explained this to users after testing. They responded positively to the idea of scrolling to move through projects instead of dragging, which the prototype currently requires.
 
 ### *Prototype 2*
 
 ![Horizontal Scroll View](images/horizontal_scroll_prototype)
+
+Link: https://www.figma.com/proto/NJSHsJ1qLCIekYpe1ys8fi/05-430-final-project?node-id=54-18400&node-type=frame&viewport=691%2C268%2C0.08&t=sZPAxkr9Aqx9EQGJ-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=54%3A18400&show-proto-sidebar=1
 
 Users liked the horizontal scroll but wanted an indicator showing the number of projects. One user didn’t realize more projects were available and tried to drag the project, suggesting a clearer cue for horizontal scrolling is needed. I couldn’t replicate my idea of showing projects in black and white that turn to color on scroll in the prototype, but it’s a feature I plan to include on the final site.
 
@@ -159,6 +163,8 @@ In summary, user feedback was instrumental in refining my design by improving na
 
 ![Updated Swiping Projects](images/updated_swiping_cards)
 ![Updated Footer](images/updated_footer)
+
+
 
 The main updates to the prototype included adding a visual indicator showing the current project’s position within the sequence and enhancing the footer with contact information like LinkedIn, email, and Instagram to improve accessibility. For the final developed site, I’ll also adjust the interaction to enable smooth scrolling rather than swiping and incorporate microinteractions to make the user experience more engaging and responsive.
 
