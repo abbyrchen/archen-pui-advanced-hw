@@ -164,7 +164,8 @@ In summary, user feedback was instrumental in refining my design by improving na
 ![Updated Swiping Projects](images/updated_swiping_cards)
 ![Updated Footer](images/updated_footer)
 
-
+Video Prototype:
+https://github.com/user-attachments/assets/9ff6ff47-dbdf-4271-a9b7-30ba520dd1c7
 
 The main updates to the prototype included adding a visual indicator showing the current project’s position within the sequence and enhancing the footer with contact information like LinkedIn, email, and Instagram to improve accessibility. For the final developed site, I’ll also adjust the interaction to enable smooth scrolling rather than swiping and incorporate microinteractions to make the user experience more engaging and responsive.
 
